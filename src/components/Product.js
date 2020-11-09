@@ -1,9 +1,11 @@
 import React from 'react'
 
-const Product = ({ products }) => {
+const Product = ({ products, type }) => {
 	if (!products) {
 		return null
 	}
+
+	const productData = products.filter(product => product.type === type)
 
 	return (
 		<table>
@@ -18,7 +20,7 @@ const Product = ({ products }) => {
 				</tr>
 			</thead>
 			<tbody>
-				{products.map(product => (
+				{productData.map(product => (
 					<tr key={product.id}>
 						<td>{product.type}</td>
 						<td>{product.name}</td>

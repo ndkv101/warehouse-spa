@@ -5,18 +5,23 @@ import { useQuery } from 'react-query'
 import { ReactQueryDevtools } from 'react-query-devtools'
 import axios from 'axios'
 
-const fetchProducts = async (key, type) => {
-	const res = await axios.get(
-		`https://bad-api-assignment.reaktor.com/products/${type}`
+const fetchProducts = async () => {
+	const productTypes = ['jackets', 'shirts', 'accessories']
+
+	const res = await Promise.all(
+		productTypes.map(type =>
+			axios.get(`https://bad-api-assignment.reaktor.com/products/${type}`)
+		)
 	)
-	return res.data
+	const products = res.map(item => item.data).flat(2)
+	return products
 }
 
 const App = () => {
 	const [type, setType] = useState('jackets')
 
 	const { isLoading, isError, data, error } = useQuery(
-		['products', type],
+		'products',
 		fetchProducts
 	)
 
@@ -33,7 +38,7 @@ const App = () => {
 			<div className='App'>
 				<h2>WAREHOUSE SPA</h2>
 				<Navbar setType={setType} />
-				<Product products={data} />
+				<Product products={data} type={type} />
 			</div>
 			<ReactQueryDevtools initialIsOpen />
 		</React.Fragment>

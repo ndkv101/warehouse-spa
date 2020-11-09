@@ -5,6 +5,11 @@ body {
 	color: #ddd;
 	text-align: center;
 }
+
+nav {
+	margin-bottom: 30px;
+}
+
 .App {
 	width: 960px;
 	margin: 0 auto;
