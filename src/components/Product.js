@@ -28,7 +28,7 @@ const Product = ({ products, type }) => {
 
 	const checkAvailability = id => {
 		const productID = id.toUpperCase()
-		const data = availability.find(item => item.id === productID)
+		const data = availability?.find(item => item.id === productID)
 
 		const regex = /\>(.*?)\</
 		const state = data?.DATAPAYLOAD.match(regex)[1]
