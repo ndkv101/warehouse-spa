@@ -33,7 +33,10 @@ const Product = ({ products, type }) => {
 		[products, type]
 	)
 
-	const { data: availability } = useQuery('availability', fetchAvailability)
+	const { isLoading, isError, error, data: availability } = useQuery(
+		'availability',
+		fetchAvailability
+	)
 
 	if (!productData) {
 		return null
@@ -47,6 +50,13 @@ const Product = ({ products, type }) => {
 		const state = data?.DATAPAYLOAD.match(regex)[1]
 
 		return state
+	}
+
+	const displayInfo = id => {
+		isLoading && <span>Loading...</span>
+		isError && <span>Error: error.message</span>
+
+		return checkAvailability(id)
 	}
 
 	return (
@@ -69,7 +79,7 @@ const Product = ({ products, type }) => {
 						<td>{product.color.map(color => color + '\t')}</td>
 						<td>{product.price}</td>
 						<td>{product.manufacturer}</td>
-						<td>{checkAvailability(product.id)}</td>
+						<td>{displayInfo(product.id)}</td>
 					</tr>
 				))}
 			</tbody>
