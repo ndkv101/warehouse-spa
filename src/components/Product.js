@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 
 const Product = ({ products, type }) => {
-	if (!products) {
+	const productData = useMemo(
+		() => products?.filter(product => product.type === type),
+		[products, type]
+	)
+
+	if (!productData) {
 		return null
 	}
-
-	const productData = products.filter(product => product.type === type)
 
 	return (
 		<table>
