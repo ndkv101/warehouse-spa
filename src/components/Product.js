@@ -20,11 +20,20 @@ const Product = ({ products, type }) => {
 		[products, type]
 	)
 
-	const { data } = useQuery('availability', fetchAvailability)
+	const { data: availability } = useQuery('availability', fetchAvailability)
 
-	console.log('data', data)
 	if (!productData) {
 		return null
+	}
+
+	const checkAvailability = id => {
+		const productID = id.toUpperCase()
+		const data = availability.find(item => item.id === productID)
+
+		const regex = /\>(.*?)\</
+		const state = data?.DATAPAYLOAD.match(regex)[1]
+
+		return state
 	}
 
 	return (
@@ -47,6 +56,7 @@ const Product = ({ products, type }) => {
 						<td>{product.color.map(color => color + '\t')}</td>
 						<td>{product.price}</td>
 						<td>{product.manufacturer}</td>
+						<td>{checkAvailability(product.id)}</td>
 					</tr>
 				))}
 			</tbody>
