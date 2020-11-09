@@ -5,12 +5,25 @@ import axios from 'axios'
 const fetchAvailability = async () => {
 	const brands = ['reps', 'abiplos', 'derp', 'nouke', 'xoon']
 
-	const res = await Promise.all(
-		brands.map(brand =>
-			axios.get(`https://bad-api-assignment.reaktor.com/availability/${brand}`)
-		)
-	)
-	const availability = res.map(item => item.data.response).flat(2)
+	const getAvailability = async name => {
+		try {
+			let result = []
+			do {
+				const response = await axios.get(
+					`https://bad-api-assignment.reaktor.com/availability/${name}`
+				)
+				result = result.concat(response.data.response)
+			} while (result.length <= 1)
+
+			return result
+		} catch (err) {
+			console.error(err.message)
+		}
+	}
+
+	const res = await Promise.all(brands.map(brand => getAvailability(brand)))
+	const availability = res.flat(2)
+
 	return availability
 }
 
