@@ -12,7 +12,7 @@ const fetchProducts = async () => {
 }
 
 const App = () => {
-	const [product, setProduct] = useState('jackets')
+	const [type, setType] = useState('jackets')
 
 	const { isLoading, isError, data, error } = useQuery(
 		'products',
@@ -30,8 +30,8 @@ const App = () => {
 	return (
 		<div className='App'>
 			<h2>WAREHOUSE SPA</h2>
-			<Navbar setProduct={setProduct} />
-			<Product product={product} />
+			<Navbar setType={setType} />
+			<Product products={data} />
 		</div>
 	)
 }

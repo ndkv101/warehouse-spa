@@ -1,11 +1,11 @@
 import React from 'react'
 
-const Navbar = ({ setProduct }) => {
+const Navbar = ({ setType }) => {
 	return (
 		<nav>
-			<button onClick={() => setProduct('jackets')}>Jackets</button>
-			<button onClick={() => setProduct('shirts')}>Shirts</button>
-			<button onClick={() => setProduct('accessories')}>Accessories</button>
+			<button onClick={() => setType('jackets')}>Jackets</button>
+			<button onClick={() => setType('shirts')}>Shirts</button>
+			<button onClick={() => setType('accessories')}>Accessories</button>
 		</nav>
 	)
 }
