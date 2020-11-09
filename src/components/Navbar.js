@@ -3,9 +3,9 @@ import React from 'react'
 const Navbar = ({ setType }) => {
 	return (
 		<nav>
-			<button onClick={() => setType('jackets')}>Jackets</button>
-			<button onClick={() => setType('shirts')}>Shirts</button>
-			<button onClick={() => setType('accessories')}>Accessories</button>
+			<button onClick={() => setType('jackets')}>JACKET</button>
+			<button onClick={() => setType('shirts')}>SHIRT</button>
+			<button onClick={() => setType('accessories')}>ACCESSORY</button>
 		</nav>
 	)
 }

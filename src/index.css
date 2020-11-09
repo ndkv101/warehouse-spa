@@ -14,42 +14,58 @@ nav {
 	width: 960px;
 	margin: 0 auto;
 }
-h1 {
-	color: #ffff57;
+
+h2 {
+	color: #006a71;
 	font-size: 4em;
 	letter-spacing: 2px;
 }
+
 button {
 	margin: 0 10px;
 	background: transparent;
-	border: 3px solid #ccc;
-	border-radius: 20px;
+	border: #222;
 	padding: 10px;
-	color: #ccc;
-	font-size: 1.2em;
+	color: #006a71;
+	font-size: 1.5em;
+	font-weight: bold;
 	cursor: pointer;
 }
+
 button:hover {
-	color: #fff;
-	border-color: #fff;
+	color: #68b0ab;
 }
+
+table {
+	margin: auto;
+}
+
+th {
+	color: #f9813a;
+	margin-bottom: 5px;
+}
+
 .content {
 	text-align: left;
 }
+
 .card {
 	padding: 8px 16px;
 	background: #1b1b1b;
 	margin: 16px 0;
 	border-radius: 20px;
 }
+
 .card p {
 	margin: 6px 0;
 	color: #999;
 }
+
 .card h3 {
 	margin: 10px 0;
 	color: #ffff57;
 }
+
 button:disabled {
 	opacity: 0.2;
 	cursor: not-allowed;

@@ -62,7 +62,7 @@ const Product = ({ products, type }) => {
 	return (
 		<table>
 			<thead>
-				<tr>
+				<tr className='table-headline'>
 					<th>Type</th>
 					<th>Name</th>
 					<th>Color</th>
