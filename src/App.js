@@ -25,8 +25,6 @@ const App = () => {
 		fetchProducts
 	)
 
-	console.log('data', data)
-
 	{
 		isLoading && <div>Loading...</div>
 	}

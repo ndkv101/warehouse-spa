@@ -1,4 +1,18 @@
 import React, { useMemo } from 'react'
+import { useQuery } from 'react-query'
+import axios from 'axios'
+
+const fetchAvailability = async () => {
+	const brands = ['reps', 'abiplos', 'derp', 'nouke', 'xoon']
+
+	const res = await Promise.all(
+		brands.map(brand =>
+			axios.get(`https://bad-api-assignment.reaktor.com/availability/${brand}`)
+		)
+	)
+	const availability = res.map(item => item.data.response).flat(2)
+	return availability
+}
 
 const Product = ({ products, type }) => {
 	const productData = useMemo(
@@ -6,6 +20,9 @@ const Product = ({ products, type }) => {
 		[products, type]
 	)
 
+	const { data } = useQuery('availability', fetchAvailability)
+
+	console.log('data', data)
 	if (!productData) {
 		return null
 	}
