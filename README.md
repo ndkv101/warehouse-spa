@@ -110,7 +110,7 @@ Project Link: [Warehouse SPA](https://warehouse-spa.netlify.app/)
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
 [license-shield]: https://img.shields.io/github/license/ndkv101/warehouse-spa.svg?style=flat-square
-[license-url]: https://github.com/ndkv101/warehouse-spa/blob/master/LICENSE
+[license-url]: https://github.com/ndkv101/warehouse-spa/blob/main/LICENSE
 [linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
 [linkedin-url]: https://linkedin.com/in/ndkv9
 [product-screenshot]: https://i.imgur.com/ZDqhGzK.png
