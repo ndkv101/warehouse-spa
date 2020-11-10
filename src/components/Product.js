@@ -7,6 +7,7 @@ const fetchAvailability = async () => {
 
 	const getAvailability = async name => {
 		try {
+			// While working with API, I found that sometimes it response with unexpected data, so the function /// below to make sure it always returns properly data
 			let result = []
 			do {
 				const response = await axios.get(
