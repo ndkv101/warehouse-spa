@@ -16,7 +16,7 @@ nav {
 }
 
 h2 {
-	color: #006a71;
+	color: #3797a4;
 	font-size: 4em;
 	letter-spacing: 2px;
 }
@@ -26,18 +26,19 @@ button {
 	background: transparent;
 	border: #222;
 	padding: 10px;
-	color: #006a71;
+	color: #3797a4;
 	font-size: 1.5em;
 	font-weight: bold;
 	cursor: pointer;
 }
 
 button:hover {
-	color: #68b0ab;
+	color: #8bcdcd;
 }
 
 table {
 	margin: auto;
+	border-spacing: 1rem;
 }
 
 th {
@@ -47,26 +48,4 @@ th {
 
 .content {
 	text-align: left;
-}
-
-.card {
-	padding: 8px 16px;
-	background: #1b1b1b;
-	margin: 16px 0;
-	border-radius: 20px;
-}
-
-.card p {
-	margin: 6px 0;
-	color: #999;
-}
-
-.card h3 {
-	margin: 10px 0;
-	color: #ffff57;
-}
-
-button:disabled {
-	opacity: 0.2;
-	cursor: not-allowed;
 }

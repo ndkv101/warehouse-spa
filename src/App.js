@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import Navbar from './components/Navbar'
 import Product from './components/Product'
 import { useQuery } from 'react-query'
-import { ReactQueryDevtools } from 'react-query-devtools'
 import axios from 'axios'
 
 const fetchProducts = async () => {
@@ -38,7 +37,6 @@ const App = () => {
 				<Navbar setType={setType} />
 				<Product products={data} type={type} />
 			</div>
-			<ReactQueryDevtools initialIsOpen />
 		</React.Fragment>
 	)
 }
